@@ -15,6 +15,16 @@ Gain insights into areas with high attrition rates to inform targeted retention 
 Analyze the attrition rate by various parameters including business travel, job satisfaction, marital status, work-life balance, monthly income, and age.
 Compare the attrition rates in different departments such as Sales, R&D, and HR.
 
+##DAX Measures for HR Dashboard
+
+-Measure to Calculate Attrition Count
+
+Attrition Count = CALCULATE([Employee Count], HR_Analytics[Attrition]="Yes")
+
+-Measures to Calculate Attrition Rate
+
+DIVIDE ([Attrition Count],CALCULATE ( [Employee Count], ALL ( HR_Analytics[Attrition] ) ),0)
+
 ## Insights 
 
 - The employee attrition rate is 16%, which is higher than the industry average of 12%. The main reasons for attrition are low salaries, high workload, and lack of career growth opportunities.
