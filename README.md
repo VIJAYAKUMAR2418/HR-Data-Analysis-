@@ -15,15 +15,52 @@ Gain insights into areas with high attrition rates to inform targeted retention 
 Analyze the attrition rate by various parameters including business travel, job satisfaction, marital status, work-life balance, monthly income, and age.
 Compare the attrition rates in different departments such as Sales, R&D, and HR.
 
-##DAX Measures for HR Dashboard
+## DAX Measures for HR Dashboard
 
--Measure to Calculate Attrition Count
+- Measure to Calculate Attrition Count
 
 Attrition Count = CALCULATE([Employee Count], HR_Analytics[Attrition]="Yes")
 
--Measures to Calculate Attrition Rate
+- Measures to Calculate Attrition Rate
 
 DIVIDE ([Attrition Count],CALCULATE ( [Employee Count], ALL ( HR_Analytics[Attrition] ) ),0)
+
+- Measures for attrition Target
+Attrition Target = 0.2
+
+- Measures to calculate Average Age
+- 
+Average Age = AVERAGE(HR_Analytics[Age])
+
+- Measures to calculate Average Job Satisfaction
+
+Average Job Satisfaction = AVERAGE(HR_Analytics[JobSatisfaction])
+
+- Measures to calculate Average Monthly Salary
+
+Average Salary = [Monthly Salary]/[Employee Count]
+
+- Measures to calculate Average Salary Hike
+
+Average Salary Hike = AVERAGE(HR_Analytics[PercentSalaryHike])
+
+- Measures to calculate Average Yaers at Company
+
+Average Years = AVERAGE(HR_Analytics[YearsAtCompany])
+
+- Measures to calculate Employee Count
+- 
+Employee Count = DISTINCTCOUNT(HR_Analytics[EmpID])
+
+- Measures to calculate Gender Ratio
+
+Gender Ratio =
+DIVIDE (
+    CALCULATE ( [Employee Count], HR_Analytics[Gender] = "Female" ),
+    CALCULATE ( [Employee Count], HR_Analytics[Gender] = "Male" ),
+    0
+)
+
 
 ## Insights 
 
