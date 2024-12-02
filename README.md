@@ -29,7 +29,7 @@ DIVIDE ([Attrition Count],CALCULATE ( [Employee Count], ALL ( HR_Analytics[Attri
 Attrition Target = 0.2
 
 - Measures to calculate Average Age
-- 
+  
 Average Age = AVERAGE(HR_Analytics[Age])
 
 - Measures to calculate Average Job Satisfaction
@@ -49,7 +49,7 @@ Average Salary Hike = AVERAGE(HR_Analytics[PercentSalaryHike])
 Average Years = AVERAGE(HR_Analytics[YearsAtCompany])
 
 - Measures to calculate Employee Count
-- 
+  
 Employee Count = DISTINCTCOUNT(HR_Analytics[EmpID])
 
 - Measures to calculate Gender Ratio
